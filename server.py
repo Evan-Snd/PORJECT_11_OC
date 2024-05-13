@@ -76,7 +76,6 @@ def create_app(config=None):
         competition = [c for c in competitions if c['name']
                        == request.form['competition']][0]
         club = [c for c in clubs if c['name'] == request.form['club']][0]
-        places_required = int(request.form['places'])
         places_available = int(competition['numberOfPlaces'])
         club_points = int(club['points'])
         while True:
@@ -86,12 +85,10 @@ def create_app(config=None):
                 flash("You can only enter number")
                 break
             if places_required <= 0:
-                raise ValueError(
-                    "Then number of places must be greather than 0")
-                flash("Then number of places must be greather than 0")
+                flash("The number of places must be greather than 0")
                 break
             if places_required > club_points:
-                flash("You can't have much places than ...")
+                flash("You can't have much places than club points")
                 break
             if places_required > places_available:
                 flash("You can't have much places than available")
@@ -101,7 +98,7 @@ def create_app(config=None):
                 break
             if places_required <= places_available:
                 competition['numberOfPlaces'] = int(
-                    competition['numberOfPlaces'])-places_required
+                    competition['numberOfPlaces']) - places_required
                 club_points = club_points - places_required
                 club['points'] = str(club_points)
                 flash('Great-booking complete!')
