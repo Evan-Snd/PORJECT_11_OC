@@ -38,7 +38,7 @@ Installez ensuite les packages requis:
 Il ne vous reste plus qu'à lancer le serveur
 Windows:
 - $env:FLASK_APP = "server.py"
-- flask run
+- flask run ou python server.py
 
 Linux :
 - export FLASK_APP=server.py
