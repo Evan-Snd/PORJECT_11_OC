@@ -52,6 +52,18 @@ Il existe déja trois utilisateurs sur le site :
 - admin@irontemple.com"
 - kate@shelifts.co.uk"
 
+## Testing
+
+Pour lancer Locust :
+- Se situer dans le dossier ou se trouve le fichier locustfile.py
+- Lancer le locust via le commande "locust" dans le terminal
+- Acééder à l'url donné
+- Rentrer un nombre d'utilisateurs égal à 6 et l'host correspondant à l'application Flask
+
+Pour lancer les test :
+- Se situer dans le dossier \tests\unit_tests
+- Lancer la commande pytest main_tests.py
+
 
 
 
